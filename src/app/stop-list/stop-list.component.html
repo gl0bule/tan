@@ -1,7 +1,11 @@
-<p>
-  stop-list works!
-</p>
-{{val}}
+<div class="input-group input-group-lg">
+  <input [(ngModel)]="stopSearch" type="text" class="form-control" />
+</div>
 <ul class="list-group">
-  <li *ngFor="let stop of stops" class="list-group-item">{{stop}}</li>
+  <li *ngFor="let stop of stops | stopFilter:stopSearch" class="list-group-item flex-column align-items-start">
+    <div>{{stop.libelle}}</div>
+    <p>
+      <span *ngFor="let line of stop.ligne">{{line.numLigne}}, </span>
+    </p>
+  </li>
 </ul>

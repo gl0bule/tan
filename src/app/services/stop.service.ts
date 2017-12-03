@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 export class StopService {
 
   constructor(private http: HttpClient) { }
-  public getStops(): Observable<String> {
-    return this.http.get("http://localhost:4200/ewp/arrets.json").map(o => JSON.stringify(o));
+  public getStops(): Observable<Array<Stop>> {
+    return this.http.get<Array<Stop>>("https://proxy-tan.herokuapp.com/stops");
   }
 }
