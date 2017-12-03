@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li *ngFor="let waitingTime of waitingTimes" class="list-group-item flex-column align-items-start">
+    <div>{{waitingTime.codeArret}}</div>
+    <p>
+      <span>{{waitingTime.ligne.numLigne}} : {{waitingTime.temps}}, vers {{waitingTime.terminus}} </span>
+    </p>
+  </li>
+</ul>
+  

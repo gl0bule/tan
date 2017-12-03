@@ -2,7 +2,7 @@
   <input [(ngModel)]="stopSearch" type="text" class="form-control" />
 </div>
 <ul class="list-group">
-  <li *ngFor="let stop of stops | stopFilter:stopSearch" class="list-group-item flex-column align-items-start">
+  <li *ngFor="let stop of stops | stopFilter:stopSearch" class="list-group-item flex-column align-items-start" (click)="select(stop)">
     <div>{{stop.libelle}}</div>
     <p>
       <span *ngFor="let line of stop.ligne">{{line.numLigne}}, </span>

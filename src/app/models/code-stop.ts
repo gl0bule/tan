@@ -1,0 +1,3 @@
+interface CodeStop {
+    codeArret: string;
+}
