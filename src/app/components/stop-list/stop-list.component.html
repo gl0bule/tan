@@ -5,7 +5,7 @@
   <li *ngFor="let stop of stops | stopFilter:stopSearch" class="list-group-item flex-column align-items-start" (click)="select(stop)">
     <div>{{stop.libelle}}</div>
     <p>
-      <span *ngFor="let line of stop.ligne">{{line.numLigne}}, </span>
+        <img *ngFor="let line of stop.ligne" class="resize" src="/assets/lignes/{{line.numLigne}}.gif" /> 
     </p>
   </li>
 </ul>

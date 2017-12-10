@@ -13,7 +13,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 const routes: Routes=[
 {path: "stop-list", component: StopListComponent}, 
 {path: "stop/:id", component: StopComponent},
-{path: "schedule", component: ScheduleComponent},
+{path: "schedule/:stopId/:lineId/:way", component: ScheduleComponent},
 {path: "", redirectTo: "/stop-list", pathMatch: "full"}];
 
 

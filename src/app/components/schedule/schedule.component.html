@@ -1,3 +1,9 @@
-<p>
-  schedule works!
-</p>
+<h1>Horaires de l'arrêt {{schedule.arret.libelle}} pour la ligne 
+  <img src="/assets/lignes/{{schedule.ligne.numLigne}}.gif" />
+</h1>
+<h3>Vers {{terminus}}</h3>
+<ul class="list-group">
+  <li *ngFor="let horaire of schedule.horaires" class="list-group-item flex-column align-items-start">
+    <span *ngFor="let passage of horaire.passages">{{horaire.heure}}{{passage}}</span>
+  </li>
+</ul>

@@ -11,11 +11,15 @@ import 'rxjs/add/operator/mergeMap';
 })
 export class StopComponent implements OnInit {
 waitingTimes : Array<WaitingTime> = new Array();
-  constructor(private route: ActivatedRoute, private stopService: StopService) { }
+  constructor(private route: ActivatedRoute, private stopService: StopService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.map((params: Params) => params['id'])
     .mergeMap(id => this.stopService.getWaitingTime(id))
     .subscribe(waitingTime => this.waitingTimes = waitingTime, error => console.error(error));
+  }
+
+  select(waitingTime: WaitingTime) {
+    this.router.navigate(["/schedule", waitingTime.arret.codeArret, waitingTime.ligne.numLigne, waitingTime.sens]);
   }
 }
