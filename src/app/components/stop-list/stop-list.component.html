@@ -1,11 +1,13 @@
 <div class="input-group input-group-lg">
   <input [(ngModel)]="stopSearch" type="text" class="form-control" />
+  <button class="btn btn-default fa fa-bullseye fa-3x" (click)="loadStopsByPositionFake()"></button>
 </div>
-<ul class="list-group">
+<div *ngIf="stops==null" class="loader"></div>
+<ul *ngIf="stops" class="list-group">
   <li *ngFor="let stop of stops | stopFilter:stopSearch" class="list-group-item flex-column align-items-start" (click)="select(stop)">
     <div>{{stop.libelle}}</div>
     <p>
-        <img *ngFor="let line of stop.ligne" class="resize" src="/assets/lignes/{{line.numLigne}}.gif" /> 
+        <img *ngFor="let line of stop.ligne" class="resize" src="/assets/lignes/{{line.numLigne}}.gif" />
     </p>
   </li>
 </ul>

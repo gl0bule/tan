@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  nbClick = 0;
-  increment() {
-    this.nbClick++;
-  }
+
 }

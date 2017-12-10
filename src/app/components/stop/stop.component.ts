@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { StopService} from '../../services/stop.service';
 import 'rxjs/add/operator/mergeMap';
 
+
 @Component({
   selector: 'app-stop',
   templateUrl: './stop.component.html',
@@ -10,7 +11,7 @@ import 'rxjs/add/operator/mergeMap';
   providers: [StopService]
 })
 export class StopComponent implements OnInit {
-waitingTimes : Array<WaitingTime> = new Array();
+waitingTimes : Array<WaitingTime> = null;
   constructor(private route: ActivatedRoute, private stopService: StopService, private router: Router) { }
 
   ngOnInit() {

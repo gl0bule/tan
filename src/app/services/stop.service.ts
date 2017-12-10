@@ -11,6 +11,13 @@ export class StopService {
     return this.http.get<Array<Stop>>("https://proxy-tan.herokuapp.com/stops");
   }
 
+  public getStopsByPosition(latitude: number, longitude: number): Observable<Array<Stop>> {
+    const latitudeStr: string = latitude.toString().replace(".", ",");
+    const longitudeStr: string = longitude.toString().replace(".", ",");
+    
+    return this.http.get<Array<Stop>>("https://proxy-tan.herokuapp.com/stops/" + latitudeStr + "/" + longitudeStr);
+  }
+
   public getWaitingTime(id:string): Observable<Array<WaitingTime>> {
     return this.http.get<Array<WaitingTime>>("https://proxy-tan.herokuapp.com/stop/"+id);
   }
